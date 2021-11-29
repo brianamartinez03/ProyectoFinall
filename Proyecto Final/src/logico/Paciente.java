@@ -7,7 +7,7 @@ public class Paciente {
 	private String cedula;
 	private String nombre;
 	private String genero;
-	private String diaNacimiento;
+	private String FechadeNacimiento;
 	private String direccion;
 	private String telefono;
 	private HistorialClinico historial;
@@ -15,13 +15,13 @@ public class Paciente {
 	
 	
 	
-	public Paciente(String cedula, String nombre, String genero, String diaNacimiento, String direccion,
+	public Paciente(String cedula, String nombre, String genero, String FechadeNacimiento, String direccion,
 			String telefono, HistorialClinico historial, ArrayList<Consulta> misConsultas) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.genero = genero;
-		this.diaNacimiento = diaNacimiento;
+		this.FechadeNacimiento = FechadeNacimiento;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.historial = historial;
@@ -60,12 +60,12 @@ public class Paciente {
 
 
 	public String getDiaNacimiento() {
-		return diaNacimiento;
+		return FechadeNacimiento;
 	}
 
 
 	public void setDiaNacimiento(String diaNacimiento) {
-		this.diaNacimiento = diaNacimiento;
+		this.FechadeNacimiento = diaNacimiento;
 	}
 
 
