@@ -16,6 +16,7 @@ public class Clinica {
 	
 	
 	
+	
 	public Clinica() {
 		super();
 		this.Pacientes = new ArrayList<Paciente>();
