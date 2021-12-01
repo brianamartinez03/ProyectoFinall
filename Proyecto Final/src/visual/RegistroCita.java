@@ -13,6 +13,8 @@ import javax.swing.UIManager;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RegistroCita extends JDialog {
 
@@ -40,7 +42,7 @@ public class RegistroCita extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroCita() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\Desktop\\2695.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\git\\ProyectoFinall\\Proyecto Final\\2695.png"));
 		setTitle("Registro de Cita");
 		setBounds(100, 100, 524, 363);
 		getContentPane().setLayout(new BorderLayout());
@@ -116,13 +118,18 @@ public class RegistroCita extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
+				JButton okButton = new JButton("Registrar");
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
-				JButton cancelButton = new JButton("Cancel");
+				JButton cancelButton = new JButton("Cancelar");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}

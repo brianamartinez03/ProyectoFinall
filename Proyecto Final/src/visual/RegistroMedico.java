@@ -24,8 +24,12 @@ import java.awt.event.ActionEvent;
 public class RegistroMedico extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtCodigo;
+	private JTextField txtEspecialidad;
+	private JTextField txtNombre;
+	private JTextField txtTelefono;
+	private JTextField txtUsuario;
+	private JTextField txtContra;
 
 	/**
 	 * Launch the application.
@@ -44,9 +48,9 @@ public class RegistroMedico extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroMedico() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\Desktop\\2695.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\\\HP\\\\git\\\\ProyectoFinall\\\\Proyecto Final\\\\2695.png"));
 		setTitle("Registro de Medico");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 630, 476);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(224, 255, 255));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -56,30 +60,89 @@ public class RegistroMedico extends JDialog {
 			JPanel panel = new JPanel();
 			panel.setBorder(new TitledBorder(null, "Registro de Medico", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			panel.setBackground(new Color(224, 255, 255));
-			panel.setBounds(0, 0, 434, 228);
+			panel.setBounds(0, 135, 614, 124);
 			contentPanel.add(panel);
 			panel.setLayout(null);
 			{
 				JLabel lblNewLabel = new JLabel("Codigo:");
-				lblNewLabel.setBounds(10, 66, 67, 14);
+				lblNewLabel.setBounds(10, 65, 67, 14);
 				panel.add(lblNewLabel);
 			}
 			{
 				JLabel lblNewLabel_1 = new JLabel("Especialidad:");
-				lblNewLabel_1.setBounds(10, 146, 78, 14);
+				lblNewLabel_1.setBounds(308, 65, 78, 14);
 				panel.add(lblNewLabel_1);
 			}
 			{
-				textField = new JTextField();
-				textField.setBounds(87, 62, 152, 20);
-				panel.add(textField);
-				textField.setColumns(10);
+				txtCodigo = new JTextField();
+				txtCodigo.setBounds(61, 62, 174, 20);
+				panel.add(txtCodigo);
+				txtCodigo.setColumns(10);
 			}
 			{
-				textField_1 = new JTextField();
-				textField_1.setBounds(87, 144, 152, 20);
-				panel.add(textField_1);
-				textField_1.setColumns(10);
+				txtEspecialidad = new JTextField();
+				txtEspecialidad.setBounds(396, 62, 174, 20);
+				panel.add(txtEspecialidad);
+				txtEspecialidad.setColumns(10);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			panel.setBorder(new TitledBorder(null, "Datos Personales", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			panel.setBackground(new Color(224, 255, 255));
+			panel.setBounds(0, 0, 614, 124);
+			contentPanel.add(panel);
+			panel.setLayout(null);
+			{
+				JLabel lblNewLabel_2 = new JLabel("Nombre:");
+				lblNewLabel_2.setBounds(10, 55, 64, 14);
+				panel.add(lblNewLabel_2);
+			}
+			{
+				JLabel lblNewLabel_3 = new JLabel("Telefono:");
+				lblNewLabel_3.setBounds(308, 55, 80, 14);
+				panel.add(lblNewLabel_3);
+			}
+			
+			txtNombre = new JTextField();
+			txtNombre.setBounds(64, 52, 174, 20);
+			panel.add(txtNombre);
+			txtNombre.setColumns(10);
+			{
+				txtTelefono = new JTextField();
+				txtTelefono.setBounds(372, 52, 174, 20);
+				panel.add(txtTelefono);
+				txtTelefono.setColumns(10);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			panel.setBorder(new TitledBorder(null, "Credenciales", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			panel.setBackground(new Color(224, 255, 255));
+			panel.setBounds(0, 270, 614, 118);
+			contentPanel.add(panel);
+			panel.setLayout(null);
+			{
+				JLabel lblNewLabel_4 = new JLabel("Usuario:");
+				lblNewLabel_4.setBounds(10, 53, 58, 14);
+				panel.add(lblNewLabel_4);
+			}
+			{
+				txtUsuario = new JTextField();
+				txtUsuario.setBounds(78, 50, 174, 20);
+				panel.add(txtUsuario);
+				txtUsuario.setColumns(10);
+			}
+			{
+				JLabel lblNewLabel_5 = new JLabel("Contrase\u00F1a:");
+				lblNewLabel_5.setBounds(307, 53, 79, 14);
+				panel.add(lblNewLabel_5);
+			}
+			{
+				txtContra = new JTextField();
+				txtContra.setBounds(396, 50, 174, 20);
+				panel.add(txtContra);
+				txtContra.setColumns(10);
 			}
 		}
 		{
@@ -88,23 +151,27 @@ public class RegistroMedico extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("Registrar");
-				okButton.addActionListener(new ActionListener() {
+				JButton Registrar = new JButton("Registrar");
+				Registrar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						
 					}
 				
 				});
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				Registrar.setActionCommand("OK");
+				buttonPane.add(Registrar);
+				getRootPane().setDefaultButton(Registrar);
 			}
 			{
-				JButton cancelButton = new JButton("Cancelar");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+				JButton Cancelar = new JButton("Cancelar");
+				Cancelar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						dispose();
+					}
+				});
+				Cancelar.setActionCommand("Cancel");
+				buttonPane.add(Cancelar);
 			}
 		}
 	}
-
 }
