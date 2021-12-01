@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Principal extends JFrame {
 
@@ -45,6 +47,12 @@ public class Principal extends JFrame {
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Registro paciente");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RegistroPaciente p = new RegistroPaciente();
+				p.setVisible(true);
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_3);
 		
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Registro m\u00E9dico");
@@ -57,6 +65,11 @@ public class Principal extends JFrame {
 		mnNewMenu_2.add(mntmNewMenuItem_2);
 		
 		JMenu mnNewMenu_3 = new JMenu("Paciente");
+		mnNewMenu_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		menuBar.add(mnNewMenu_3);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Listado de pacientes");
