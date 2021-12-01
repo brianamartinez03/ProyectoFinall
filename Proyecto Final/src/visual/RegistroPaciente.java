@@ -51,7 +51,7 @@ public class RegistroPaciente extends JDialog {
 	 * Create the dialog.
 	 */
 	public RegistroPaciente() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\Desktop\\2695.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\\\HP\\\\git\\\\ProyectoFinall\\\\Proyecto Final\\\\2695.png"));
 		setTitle("Registro de Paciente");
 		setBounds(100, 100, 458, 451);
 		setLocationRelativeTo(null);
