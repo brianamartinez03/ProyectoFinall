@@ -43,6 +43,7 @@ public class RegistroCita extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\Desktop\\2695.png"));
 		setTitle("Registro de Cita");
 		setBounds(100, 100, 524, 363);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);

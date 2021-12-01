@@ -1,6 +1,7 @@
 package visual;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,6 +16,7 @@ import java.awt.event.ActionEvent;
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
+	private Dimension din;
 
 	/**
 	 * Launch the application.
@@ -39,6 +41,9 @@ public class Principal extends JFrame {
 		setTitle("Clinica");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 686, 431);
+		din = getToolkit().getScreenSize();  
+		super.setSize(din.width,din.height-45);
+		setLocationRelativeTo(null);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -73,6 +78,12 @@ public class Principal extends JFrame {
 		menuBar.add(mnNewMenu_3);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Listado de pacientes");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListadoPacientes m = new ListadoPacientes();
+				m.setVisible(true);
+			}
+		});
 		mnNewMenu_3.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Historial Clinico");

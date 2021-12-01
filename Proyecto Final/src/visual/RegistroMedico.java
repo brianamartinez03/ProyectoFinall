@@ -47,6 +47,7 @@ public class RegistroMedico extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\Desktop\\2695.png"));
 		setTitle("Registro de Medico");
 		setBounds(100, 100, 450, 300);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(224, 255, 255));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

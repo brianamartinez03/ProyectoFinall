@@ -2,39 +2,29 @@ package logico;
 
 public abstract class Usuario {
 
-	protected String codUsuario;
-	protected String login;
+	protected String CodUsuario;
 	protected String idUsuario;
-	protected String password;
 	protected String nombre;
 	protected String telefono;
 	
-	public Usuario(String codUsuario, String login, String idUsuario, String password, String nombre, String telefono) {
+	public Usuario(String codUsuario, String idUsuario, String nombre, String telefono) {
 		super();
-		this.codUsuario = codUsuario;
-		this.login = login;
+		this.CodUsuario = codUsuario;
 		this.idUsuario = idUsuario;
-		this.password = password;
+	
 		this.nombre = nombre;
 		this.telefono = telefono;
 	}
 	
 
 	public String getCodUsuario() {
-		return codUsuario;
+		return CodUsuario;
 	}
 
 	public void setCodUsuario(String codUsuario) {
-		this.codUsuario = codUsuario;
+		this.CodUsuario = codUsuario;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
 
 	public String getIdUsuario() {
 		return idUsuario;
@@ -44,13 +34,7 @@ public abstract class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 
 	public String getNombre() {
 		return nombre;
