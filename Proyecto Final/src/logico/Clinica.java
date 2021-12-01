@@ -9,6 +9,7 @@ public class Clinica {
 	private ArrayList<CitaMedica>citasMedicas;
 	private ArrayList<Enfermedad>Enfermedades;
 	private ArrayList<Vacuna>Vacunas;
+	private ArrayList<Medico>Medicos;
 	public static Clinica clinica = null;
 	private int cantpacientes=0;
 	private int cantcitas=0;
@@ -24,6 +25,7 @@ public class Clinica {
 		this.citasMedicas = new ArrayList<CitaMedica>();
 		this.Enfermedades = new ArrayList<Enfermedad>();
 		this.Vacunas = new ArrayList<Vacuna>();
+		this.Medicos = new ArrayList<Medico>();
 	}
 
 	public static Clinica getInstance() {
@@ -82,16 +84,14 @@ public class Clinica {
 		this.Vacunas = misVacunas;
 	}
 	
-	/*public void insertarVino(Vino v1, Suministrador s1) {
-		misVinos[cantRealVino] = v1;
-		cantRealVino++;
-		s1.isertVino(v1);
-		miSumi[cantRealSum]=s1;
-		cantRealSum++;
-	*/
+	
 	
 	public void insertarPaciente(Paciente paciente) {
 		Pacientes.add(paciente);
+	}
+	
+	public void insertarMedico(Medico medico) {
+		Medicos.add(medico);
 	}
 
 	public void insertarCitaMedica(CitaMedica citasmedicas) {
@@ -109,21 +109,7 @@ public class Clinica {
 	public void insertarVacuna(Vacuna vacuna) {
 		Vacunas.add(vacuna);
 	}
-	
-	/*public Componente obtenerComponente(String NumSerie) {
-		Componente comp = null;
-		boolean encontrado = false;
-		int i = 0;
-		while (i < misComps.size() && !encontrado) {
-			if (misComps.get(i).getNumSerie().equalsIgnoreCase(NumSerie)) {
-				comp = misComps.get(i);
-				encontrado = true;
-			}
-			i++;
-		}
-		return comp;
-	}*/
-	
+
 	public Paciente BuscarPaciente(String id) {
 		boolean encontrado = false;
 		Paciente paciente = null;

@@ -9,21 +9,30 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Toolkit;
 import javax.swing.border.TitledBorder;
+
+import logico.Clinica;
+import logico.Paciente;
+
+
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RegistroPaciente extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField txtcedula;
+	private JTextField txtnombre;
+	private JTextField txtnacimiento;
+	private JTextField txtdireccion;
+	private JTextField txttelefono;
+	private JComboBox cbxgenero;
 
 	/**
 	 * Launch the application.
@@ -86,35 +95,35 @@ public class RegistroPaciente extends JDialog {
 			panel.add(lblNewLabel_4);
 		}
 		
-		textField = new JTextField();
-		textField.setBounds(146, 39, 197, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtcedula = new JTextField();
+		txtcedula.setBounds(146, 39, 197, 20);
+		panel.add(txtcedula);
+		txtcedula.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(146, 95, 197, 20);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		txtnombre = new JTextField();
+		txtnombre.setBounds(146, 95, 197, 20);
+		panel.add(txtnombre);
+		txtnombre.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(146, 151, 197, 20);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
+		txtnacimiento = new JTextField();
+		txtnacimiento.setBounds(146, 151, 197, 20);
+		panel.add(txtnacimiento);
+		txtnacimiento.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(146, 263, 197, 20);
-		panel.add(textField_4);
-		textField_4.setColumns(10);
+		txtdireccion = new JTextField();
+		txtdireccion.setBounds(146, 263, 197, 20);
+		panel.add(txtdireccion);
+		txtdireccion.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(146, 319, 197, 20);
-		panel.add(textField_5);
-		textField_5.setColumns(10);
+		txttelefono = new JTextField();
+		txttelefono.setBounds(146, 319, 197, 20);
+		panel.add(txttelefono);
+		txttelefono.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Femenino", "Masculino"}));
-		comboBox.setBounds(146, 207, 197, 20);
-		panel.add(comboBox);
+		cbxgenero = new JComboBox();
+		cbxgenero.setModel(new DefaultComboBoxModel(new String[] {"<Seleccione>", "Femenino", "Masculino"}));
+		cbxgenero.setBounds(146, 207, 197, 20);
+		panel.add(cbxgenero);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -122,15 +131,40 @@ public class RegistroPaciente extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Registrar");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Paciente p = new Paciente(txtcedula.getText(), txtnombre.getText(), cbxgenero.getSelectedItem().toString(), txtnacimiento.getText(), txtdireccion.getText(), txttelefono.getText());
+						Clinica.getInstance().insertarPaciente(p);
+						JOptionPane.showMessageDialog(null, "Se ha registrado correctamente el paciente");
+						clean();
+					}
+
+					
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancelar");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
 		}
+	}
+	
+	private void clean() {
+		txtcedula.setText("");
+		txtnombre.setText("");
+		txtdireccion.setText("");
+		txttelefono.setText("");
+		txtnacimiento.setText("");
+		cbxgenero.setSelectedIndex(0);
+		
 	}
 }

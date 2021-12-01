@@ -66,7 +66,7 @@ public class RegistroCita extends JDialog {
 			}
 			{
 				JLabel lblNewLabel_2 = new JLabel("Telefono:");
-				lblNewLabel_2.setBounds(10, 214, 46, 14);
+				lblNewLabel_2.setBounds(10, 214, 71, 14);
 				panel.add(lblNewLabel_2);
 			}
 			{

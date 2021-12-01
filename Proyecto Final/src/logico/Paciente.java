@@ -1,8 +1,9 @@
 package logico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Paciente {
+public class Paciente implements Serializable {
 
 	private String cedula;
 	private String nombre;
@@ -10,13 +11,13 @@ public class Paciente {
 	private String FechadeNacimiento;
 	private String direccion;
 	private String telefono;
-	private HistorialClinico historial;
+	private ArrayList<HistorialClinico>mishistoriales;
 	private ArrayList<Consulta>misConsultas;
 	
 	
 	
 	public Paciente(String cedula, String nombre, String genero, String FechadeNacimiento, String direccion,
-			String telefono, HistorialClinico historial, ArrayList<Consulta> misConsultas) {
+			String telefono) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -24,9 +25,34 @@ public class Paciente {
 		this.FechadeNacimiento = FechadeNacimiento;
 		this.direccion = direccion;
 		this.telefono = telefono;
-		this.historial = historial;
-		this.misConsultas = misConsultas;
+		this.misConsultas = new ArrayList<Consulta>();
+		this.mishistoriales = new ArrayList<HistorialClinico>();
 	}
+
+	
+
+	public String getFechadeNacimiento() {
+		return FechadeNacimiento;
+	}
+
+
+
+	public void setFechadeNacimiento(String fechadeNacimiento) {
+		FechadeNacimiento = fechadeNacimiento;
+	}
+
+
+
+	public ArrayList<HistorialClinico> getMishistoriales() {
+		return mishistoriales;
+	}
+
+
+
+	public void setMishistoriales(ArrayList<HistorialClinico> mishistoriales) {
+		this.mishistoriales = mishistoriales;
+	}
+
 
 
 	public String getCedula() {
@@ -88,15 +114,6 @@ public class Paciente {
 		this.telefono = telefono;
 	}
 
-
-	public HistorialClinico getHistorial() {
-		return historial;
-	}
-
-
-	public void setHistorial(HistorialClinico historial) {
-		this.historial = historial;
-	}
 
 
 	public ArrayList<Consulta> getMisConsultas() {
