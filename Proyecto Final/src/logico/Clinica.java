@@ -13,6 +13,10 @@ public class Clinica {
 	public static Clinica clinica = null;
 	private int cantpacientes=0;
 	private int cantcitas=0;
+	private int cantmedicos=0;
+	private int cantvacunas=0;
+	private int cantenfermedades=0;
+	private int cantusuarios=0;
 
 	
 	
@@ -33,6 +37,10 @@ public class Clinica {
 			clinica = new Clinica();
 		}
 		return clinica;
+	}
+	
+	public static void setClinica(Clinica clinica) {
+		Clinica.clinica = clinica;
 	}
 
 	public ArrayList<Paciente> getMisPacientes() {
@@ -84,32 +92,6 @@ public class Clinica {
 		this.Vacunas = misVacunas;
 	}
 	
-	
-	
-	public void insertarPaciente(Paciente paciente) {
-		Pacientes.add(paciente);
-	}
-	
-	public void insertarMedico(Medico medico) {
-		Medicos.add(medico);
-	}
-
-	public void insertarCitaMedica(CitaMedica citasmedicas) {
-		citasMedicas.add(citasmedicas);
-	}
-	
-	public void insertarEnfermedad(Enfermedad enfermedad) {
-		Enfermedades.add(enfermedad);
-	}
-	
-	public void insertarUsuario(Usuario usuario) {
-		Usuarios.add(usuario);
-	}	
-	
-	public void insertarVacuna(Vacuna vacuna) {
-		Vacunas.add(vacuna);
-	}
-
 	public Paciente BuscarPaciente(String id) {
 		boolean encontrado = false;
 		Paciente paciente = null;
@@ -166,6 +148,20 @@ public class Clinica {
 		return usuario;
 	}
 	
+	public Medico BuscarMedico(String id) {
+		boolean encontrado = false;
+		Medico usuario = null;
+		int i = 0;
+		while(i<Medicos.size() && !encontrado) {
+			if(Medicos.get(i).getCodUsuario().equalsIgnoreCase(id)){
+				usuario = Medicos.get(i);
+				encontrado =true;
+			}
+			i++;
+		}
+		return usuario;
+	}
+	
 	public Vacuna BuscarVacuna(String id) {
 		boolean encontrado = false;
 		Vacuna vacuna = null;
@@ -179,5 +175,145 @@ public class Clinica {
 		}
 		return vacuna;
 	}
+	
+	public boolean insertarPaciente(Paciente paciente) {
+		boolean hecho = false;
+		if (paciente != null) {
+			Pacientes.add(paciente);
+			System.out.println("aqui2");
+			cantpacientes++;
+			hecho = true;
+
+		}
+		System.out.println(hecho);
+		return hecho;
+	}
+	
+	public boolean insertarMedico(Medico medico) {
+		boolean hecho = false;
+		if (medico != null) {
+			Medicos.add(medico);
+			System.out.println("aqui");
+			cantmedicos++;
+			hecho = true;
+
+		}
+		System.out.println(hecho);
+		return hecho;
+	}
+	
+	public boolean insertarCitaMedica(CitaMedica citamedica) {
+		boolean hecho = false;
+		if (citamedica != null) {
+			citasMedicas.add(citamedica);
+			System.out.println("aqui3");
+			cantcitas++;
+			hecho = true;
+
+		}
+		System.out.println(hecho);
+		return hecho;
+	}
+	
+	public boolean insertarEnfermedad(Enfermedad enfermedad) {
+		boolean hecho = false;
+		if (enfermedad != null) {
+			Enfermedades.add(enfermedad);
+			System.out.println("aqui4");
+			cantenfermedades++;
+			hecho = true;
+
+		}
+		System.out.println(hecho);
+		return hecho;
+	}
+	
+	public boolean insertarUsuario(Usuario usuario) {
+		boolean hecho = false;
+		if (usuario != null) {
+			Usuarios.add(usuario);
+			System.out.println("aqui4");
+			cantusuarios++;
+			hecho = true;
+
+		}
+		System.out.println(hecho);
+		return hecho;
+	}
+	
+	public boolean insertarVacuna(Vacuna vacuna) {
+		boolean hecho = false;
+		if (vacuna != null) {
+			Vacunas.add(vacuna);
+			System.out.println("aqui4");
+			cantvacunas++;
+			hecho = true;
+
+		}
+		System.out.println(hecho);
+		return hecho;
+	}
+	
+	public boolean deletePaciente(Paciente paciente) {
+		System.out.println("eliminar paciente");
+		if (paciente != null) {
+			Pacientes.remove(paciente);
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		return true;
+
+	}
+
+	
+	public boolean deleteMedico(Medico medico) {
+		System.out.println("eliminar medico");
+		if (medico != null) {
+			Medicos.remove(medico);
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		return true;
+
+	}
+	
+	public boolean deleteCitaMedica(CitaMedica citamedica) {
+		System.out.println("eliminar cita medica");
+		if (citamedica != null) {
+			citasMedicas.remove(citamedica);
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		return true;
+
+	}
+	
+	public boolean deleteUsuario(Usuario usuario) {
+		System.out.println("eliminar usuario");
+		if (usuario != null) {
+			Usuarios.remove(usuario);
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		return true;
+
+	}
+	
+	public boolean deleteVacuna(Vacuna vacuna) {
+		System.out.println("eliminar vacuna");
+		if (vacuna != null) {
+			Vacunas.remove(vacuna);
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		return true;
+
+	}
+	
 }
 

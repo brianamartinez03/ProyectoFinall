@@ -1,4 +1,4 @@
-package servicio;
+/*package servicio;
 
 
 import java.sql.PreparedStatement;
@@ -71,4 +71,4 @@ public class PacienteDao implements Dao <Paciente> {
 	}
 	
 
-}
+}*/

@@ -159,6 +159,7 @@ public class RegistroPaciente extends JDialog {
 		}
 	}
 	
+	
 	private void clean() {
 		txtcedula.setText("");
 		txtnombre.setText("");
