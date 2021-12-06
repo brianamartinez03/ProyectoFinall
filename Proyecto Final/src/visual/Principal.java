@@ -54,7 +54,7 @@ public class Principal extends JFrame {
 				ObjectInputStream empresaRead;
 				ObjectOutputStream empresaWrite;
 				try {
-					empresa = new FileInputStream ("empresa.dat");
+					empresa = new FileInputStream ("empresa.txt");
 					empresaRead = new ObjectInputStream(empresa);
 					Clinica temp = (Clinica)empresaRead.readObject();
 					Clinica.setClinica(temp);
@@ -62,7 +62,7 @@ public class Principal extends JFrame {
 					empresaRead.close();
 				} catch (FileNotFoundException e) {
 					try {
-						empresa2 = new  FileOutputStream("empresa.dat");
+						empresa2 = new  FileOutputStream("empresa.txt");
 						empresaWrite = new ObjectOutputStream(empresa2);
 						//User aux = new User("Administrador", "Admin", "Admin");
 						//Control.getInstance().regUser(aux);
