@@ -60,12 +60,12 @@ public class ListadoPacientes extends JDialog {
 		{
 			JPanel panel = new JPanel();
 			panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-			panel.setBounds(0, 0, 763, 393);
+			panel.setBounds(0, 41, 763, 352);
 			contentPanel.add(panel);
 			panel.setLayout(null);
 			{
 				JScrollPane scrollPane = new JScrollPane();
-				scrollPane.setBounds(0, 0, 763, 393);
+				scrollPane.setBounds(0, 0, 763, 352);
 				panel.add(scrollPane);
 				{
 					
@@ -86,6 +86,11 @@ public class ListadoPacientes extends JDialog {
 				}
 			}
 		}
+		
+		JPanel panel1 = new JPanel();
+		panel1.setToolTipText("");
+		panel1.setBounds(0, 0, 763, 41);
+		contentPanel.add(panel1);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -127,4 +132,5 @@ public class ListadoPacientes extends JDialog {
 			modelo.addRow(fila);
 		}
 
-}}}
+}}	
+}
