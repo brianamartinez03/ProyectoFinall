@@ -15,6 +15,8 @@ public class Paciente implements Serializable {
 	private ArrayList<Consulta>misConsultas;
 	
 	
+	public Paciente() {}
+	
 	
 	public Paciente(String cedula, String nombre, String genero, String FechadeNacimiento, String direccion,
 			String telefono) {
