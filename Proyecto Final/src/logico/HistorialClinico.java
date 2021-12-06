@@ -7,13 +7,15 @@ public class HistorialClinico {
 	private String codHistorial;
 	private ArrayList<Consulta>misConsultas;
 	private ArrayList<Vacuna>misVacunas;
+	private ArrayList<Enfermedad>Enfermedades;
 	
 	
-	public HistorialClinico(String codHistorial, ArrayList<Consulta> misConsultas, ArrayList<Vacuna> misVacunas) {
+	public HistorialClinico(String codHistorial, ArrayList<Consulta> misConsultas, ArrayList<Vacuna> misVacunas, ArrayList<Enfermedad>Enfermedades) {
 		super();
 		this.codHistorial = codHistorial;
 		this.misConsultas = misConsultas;
 		this.misVacunas = misVacunas;
+		this.Enfermedades= Enfermedades;
 	}
 
 	
@@ -45,6 +47,18 @@ public class HistorialClinico {
 
 	public void setMisVacunas(ArrayList<Vacuna> misVacunas) {
 		this.misVacunas = misVacunas;
+	}
+
+
+
+	public ArrayList<Enfermedad> getEnfermedades() {
+		return Enfermedades;
+	}
+
+
+
+	public void setEnfermedades(ArrayList<Enfermedad> enfermedades) {
+		Enfermedades = enfermedades;
 	}
 	
 	
