@@ -180,7 +180,7 @@ public class Clinica {
 		boolean hecho = false;
 		if (paciente != null) {
 			Pacientes.add(paciente);
-			System.out.println("aqui2");
+			System.out.println("Paciente Añadido");
 			cantpacientes++;
 			hecho = true;
 
