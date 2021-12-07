@@ -327,6 +327,48 @@ public class Clinica {
 	public void setCantpacientes(int cantpacientes) {
 		this.cantpacientes = cantpacientes;
 	}
+
+	public int getCantcitas() {
+		return cantcitas;
+	}
+
+	public void setCantcitas(int cantcitas) {
+		this.cantcitas = cantcitas;
+	}
+
+	public int getCantmedicos() {
+		return cantmedicos;
+	}
+
+	public void setCantmedicos(int cantmedicos) {
+		this.cantmedicos = cantmedicos;
+	}
+
+	public int getCantvacunas() {
+		return cantvacunas;
+	}
+
+	public void setCantvacunas(int cantvacunas) {
+		this.cantvacunas = cantvacunas;
+	}
+
+	public int getCantenfermedades() {
+		return cantenfermedades;
+	}
+
+	public void setCantenfermedades(int cantenfermedades) {
+		this.cantenfermedades = cantenfermedades;
+	}
+
+	public int getCantusuarios() {
+		return cantusuarios;
+	}
+
+	public void setCantusuarios(int cantusuarios) {
+		this.cantusuarios = cantusuarios;
+	}
+	
+	
 	
 }
 
