@@ -30,6 +30,11 @@ public class Clinica {
 		this.Enfermedades = new ArrayList<Enfermedad>();
 		this.Vacunas = new ArrayList<Vacuna>();
 		this.Medicos = new ArrayList<Medico>();
+		this.cantcitas=0;
+		this.cantmedicos=0;
+		this.cantvacunas=0;
+		this.cantenfermedades=0;
+		this.cantusuarios=0;
 	}
 
 	public static Clinica getInstance() {
@@ -181,7 +186,7 @@ public class Clinica {
 		if (paciente != null) {
 			Pacientes.add(paciente);
 			System.out.println("Paciente Añadido");
-			cantpacientes++;
+			setCantpacientes(getCantpacientes() + 1);
 			hecho = true;
 
 		}
@@ -193,7 +198,7 @@ public class Clinica {
 		boolean hecho = false;
 		if (medico != null) {
 			Medicos.add(medico);
-			System.out.println("aqui");
+			System.out.println("Medico Añadido");
 			cantmedicos++;
 			hecho = true;
 
@@ -206,7 +211,7 @@ public class Clinica {
 		boolean hecho = false;
 		if (citamedica != null) {
 			citasMedicas.add(citamedica);
-			System.out.println("aqui3");
+			System.out.println("Cita Añadida");
 			cantcitas++;
 			hecho = true;
 
@@ -219,7 +224,7 @@ public class Clinica {
 		boolean hecho = false;
 		if (enfermedad != null) {
 			Enfermedades.add(enfermedad);
-			System.out.println("aqui4");
+			System.out.println("Enfermedad Añadida");
 			cantenfermedades++;
 			hecho = true;
 
@@ -232,7 +237,7 @@ public class Clinica {
 		boolean hecho = false;
 		if (usuario != null) {
 			Usuarios.add(usuario);
-			System.out.println("aqui4");
+			System.out.println("Usuario Añadido");
 			cantusuarios++;
 			hecho = true;
 
@@ -245,7 +250,7 @@ public class Clinica {
 		boolean hecho = false;
 		if (vacuna != null) {
 			Vacunas.add(vacuna);
-			System.out.println("aqui4");
+			System.out.println("Vacuna Añadida");
 			cantvacunas++;
 			hecho = true;
 
@@ -313,6 +318,14 @@ public class Clinica {
 		}
 		return true;
 
+	}
+
+	public int getCantpacientes() {
+		return cantpacientes;
+	}
+
+	public void setCantpacientes(int cantpacientes) {
+		this.cantpacientes = cantpacientes;
 	}
 	
 }
