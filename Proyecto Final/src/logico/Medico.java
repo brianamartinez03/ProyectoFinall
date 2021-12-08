@@ -1,6 +1,8 @@
 package logico;
 
-public class Medico extends Usuario {
+import java.io.Serializable;
+
+public class Medico extends Usuario implements Serializable {
 
 	private String codMedico;
 	private String especialidad;

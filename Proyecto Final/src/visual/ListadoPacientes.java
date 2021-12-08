@@ -122,13 +122,12 @@ public class ListadoPacientes extends JDialog {
 		fila = new Object[modelo.getColumnCount()];
 		for(Paciente p : Clinica.getInstance().getMisPacientes()){
 			
-			Paciente c = (paciente);	
-			fila[0]=c.getCedula();
-			fila[1]=c.getNombre();
-			fila[2]=c.getGenero();
-			fila[3]=c.getDiaNacimiento();
-			fila[4]=c.getDireccion();
-			fila[5]=c.getTelefono();
+			fila[0]=p.getCedula();
+			fila[1]=p.getNombre();
+			fila[2]=p.getGenero();
+			fila[3]=p.getDiaNacimiento();
+			fila[4]=p.getDireccion();
+			fila[5]=p.getTelefono();
 			modelo.addRow(fila);
 		
 
