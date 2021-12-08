@@ -9,7 +9,6 @@ public class Clinica {
 	private ArrayList<CitaMedica>citasMedicas;
 	private ArrayList<Enfermedad>Enfermedades;
 	private ArrayList<Vacuna>Vacunas;
-	private ArrayList<Medico>Medicos;
 	public static Clinica clinica = null;
 	private int cantpacientes=0;
 	private int cantcitas=0;
@@ -29,7 +28,6 @@ public class Clinica {
 		this.citasMedicas = new ArrayList<CitaMedica>();
 		this.Enfermedades = new ArrayList<Enfermedad>();
 		this.Vacunas = new ArrayList<Vacuna>();
-		this.Medicos = new ArrayList<Medico>();
 		this.cantcitas=0;
 		this.cantmedicos=0;
 		this.cantvacunas=0;
@@ -153,19 +151,6 @@ public class Clinica {
 		return usuario;
 	}
 	
-	public Medico BuscarMedico(String id) {
-		boolean encontrado = false;
-		Medico usuario = null;
-		int i = 0;
-		while(i<Medicos.size() && !encontrado) {
-			if(Medicos.get(i).getCodUsuario().equalsIgnoreCase(id)){
-				usuario = Medicos.get(i);
-				encontrado =true;
-			}
-			i++;
-		}
-		return usuario;
-	}
 	
 	public Vacuna BuscarVacuna(String id) {
 		boolean encontrado = false;
@@ -194,18 +179,6 @@ public class Clinica {
 		return hecho;
 	}
 	
-	public boolean insertarMedico(Medico medico) {
-		boolean hecho = false;
-		if (medico != null) {
-			Medicos.add(medico);
-			System.out.println("Medico Añadido");
-			cantmedicos++;
-			hecho = true;
-
-		}
-		System.out.println(hecho);
-		return hecho;
-	}
 	
 	public boolean insertarCitaMedica(CitaMedica citamedica) {
 		boolean hecho = false;
@@ -272,17 +245,6 @@ public class Clinica {
 	}
 
 	
-	public boolean deleteMedico(Medico medico) {
-		System.out.println("eliminar medico");
-		if (medico != null) {
-			Medicos.remove(medico);
-			System.out.println("true");
-		} else {
-			System.out.println("false");
-		}
-		return true;
-
-	}
 	
 	public boolean deleteCitaMedica(CitaMedica citamedica) {
 		System.out.println("eliminar cita medica");

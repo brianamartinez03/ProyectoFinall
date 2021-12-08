@@ -94,6 +94,8 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		
+		
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -138,11 +140,18 @@ public class Principal extends JFrame {
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Registro m\u00E9dico");
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				RegistroMedico p = new RegistroMedico();
-				p.setVisible(true);
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
+		
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Registro Usuario");
+		mntmNewMenuItem_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RegistroUsuario p = new RegistroUsuario();
+				p.setVisible(true);
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_7);
 		
 		JMenu mnNewMenu_2 = new JMenu("Medico");
 		menuBar.add(mnNewMenu_2);

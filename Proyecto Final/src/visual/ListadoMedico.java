@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 import logico.Clinica;
 import logico.Paciente;
+import logico.Medico;
 
 
 import javax.swing.JScrollPane;
@@ -22,8 +23,10 @@ import java.awt.event.MouseEvent;
 import javax.swing.border.TitledBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
 
-public class ListadoPacientes extends JDialog {
+public class ListadoMedico extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
@@ -49,16 +52,19 @@ public class ListadoPacientes extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public ListadoPacientes() {
-		setTitle("Listado de pacientes");
+	public ListadoMedico() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\git\\ProyectoFinall\\Proyecto Final\\2695.png"));
+		setTitle("Listado de Medicos");
 		setBounds(100, 100, 779, 465);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(224, 255, 255));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
 			JPanel panel = new JPanel();
+			panel.setBackground(new Color(224, 255, 255));
 			panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			panel.setBounds(0, 41, 763, 352);
 			contentPanel.add(panel);
@@ -88,11 +94,13 @@ public class ListadoPacientes extends JDialog {
 		}
 		
 		JPanel panel1 = new JPanel();
+		panel1.setBackground(new Color(224, 255, 255));
 		panel1.setToolTipText("");
 		panel1.setBounds(0, 0, 763, 41);
 		contentPanel.add(panel1);
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(224, 255, 255));
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
