@@ -18,13 +18,9 @@ public class Clinica implements Serializable {
 	private int cantenfermedades = 0;
 	private int cantusuarios = 0;
 
-<<<<<<< HEAD
 	private Usuario user = null;
 	
 	
-	
-=======
->>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
 	public Clinica() {
 		super();
 		this.Pacientes = new ArrayList<Paciente>();
@@ -45,7 +41,7 @@ public class Clinica implements Serializable {
 		}
 		return clinica;
 	}
-<<<<<<< HEAD
+
 	
 	
 	public ArrayList<Paciente> getPacientes() {
@@ -87,8 +83,7 @@ public class Clinica implements Serializable {
 	public void setUser(Usuario user) {
 		this.user = user;
 	}
-=======
->>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
+
 
 	public static void setClinica(Clinica clinica) {
 		Clinica.clinica = clinica;
@@ -181,20 +176,17 @@ public class Clinica implements Serializable {
 		boolean encontrado = false;
 		Usuario usuario = null;
 		int i = 0;
-<<<<<<< HEAD
+
 		while(i<Usuarios.size() && !encontrado) {
 			if(Usuarios.get(i).getIdUsuario().equalsIgnoreCase(id)){
-=======
-		while (i < Usuarios.size() && !encontrado) {
-			if (Usuarios.get(i).getCodUsuario().equalsIgnoreCase(id)) {
->>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
+
 				usuario = Usuarios.get(i);
 				encontrado = true;
 			}
 			i++;
 		}
 		return usuario;
-	}
+			}
 
 	public Vacuna BuscarVacuna(String id) {
 		boolean encontrado = false;
@@ -370,7 +362,7 @@ public class Clinica implements Serializable {
 	public void setCantusuarios(int cantusuarios) {
 		this.cantusuarios = cantusuarios;
 	}
-<<<<<<< HEAD
+
 
 	public boolean IniciarSesion(String text, String text2) {
 		boolean res = false;
@@ -396,7 +388,6 @@ public class Clinica implements Serializable {
 	
 }
 	
-=======
->>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
 
-}
+
+
