@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 public abstract class Usuario implements Serializable{
 
-	protected String CodUsuario;
+	
 	protected String idUsuario;
 	protected String nombre;
 	protected String telefono;
 	
-	public Usuario(String codUsuario, String idUsuario, String nombre, String telefono) {
+	public Usuario( String idUsuario, String nombre, String telefono) {
 		super();
-		this.CodUsuario = codUsuario;
+		
 		this.idUsuario = idUsuario;
 	
 		this.nombre = nombre;
@@ -19,13 +19,7 @@ public abstract class Usuario implements Serializable{
 	}
 	
 
-	public String getCodUsuario() {
-		return CodUsuario;
-	}
-
-	public void setCodUsuario(String codUsuario) {
-		this.CodUsuario = codUsuario;
-	}
+	
 
 
 	public String getIdUsuario() {

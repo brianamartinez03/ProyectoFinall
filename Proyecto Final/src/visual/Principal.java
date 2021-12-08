@@ -46,7 +46,7 @@ public class Principal extends JFrame {
 		});
 	}*/
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				FileInputStream empresa;
@@ -88,7 +88,7 @@ public class Principal extends JFrame {
 				}
 			}
 		});
-	}
+	}/*
 
 	/**
 	 * Create the frame.

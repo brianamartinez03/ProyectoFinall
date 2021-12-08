@@ -17,7 +17,7 @@ public class Clinica {
 	private int cantenfermedades=0;
 	private int cantusuarios=0;
 
-	
+	private Usuario user = null;
 	
 	
 	
@@ -42,6 +42,47 @@ public class Clinica {
 		return clinica;
 	}
 	
+	
+	public ArrayList<Paciente> getPacientes() {
+		return Pacientes;
+	}
+
+	public void setPacientes(ArrayList<Paciente> pacientes) {
+		Pacientes = pacientes;
+	}
+
+	public ArrayList<Usuario> getUsuarios() {
+		return Usuarios;
+	}
+
+	public void setUsuarios(ArrayList<Usuario> usuarios) {
+		Usuarios = usuarios;
+	}
+
+	public ArrayList<Enfermedad> getEnfermedades() {
+		return Enfermedades;
+	}
+
+	public void setEnfermedades(ArrayList<Enfermedad> enfermedades) {
+		Enfermedades = enfermedades;
+	}
+
+	public ArrayList<Vacuna> getVacunas() {
+		return Vacunas;
+	}
+
+	public void setVacunas(ArrayList<Vacuna> vacunas) {
+		Vacunas = vacunas;
+	}
+
+	public Usuario getUser() {
+		return user;
+	}
+
+	public void setUser(Usuario user) {
+		this.user = user;
+	}
+
 	public static void setClinica(Clinica clinica) {
 		Clinica.clinica = clinica;
 	}
@@ -142,7 +183,7 @@ public class Clinica {
 		Usuario usuario = null;
 		int i = 0;
 		while(i<Usuarios.size() && !encontrado) {
-			if(Usuarios.get(i).getCodUsuario().equalsIgnoreCase(id)){
+			if(Usuarios.get(i).getIdUsuario().equalsIgnoreCase(id)){
 				usuario = Usuarios.get(i);
 				encontrado =true;
 			}
@@ -329,8 +370,29 @@ public class Clinica {
 	public void setCantusuarios(int cantusuarios) {
 		this.cantusuarios = cantusuarios;
 	}
-	
-	
+
+	public boolean IniciarSesion(String text, String text2) {
+		boolean res = false;
+		int i = 0;
+		while(i<Usuarios.size() && !res) {
+			if(Usuarios.get(i) instanceof Administrador) {
+				if(((Administrador)Usuarios.get(i)).getUser().equalsIgnoreCase(text)
+						&& ((Administrador)Usuarios.get(i)).getContrasena().equalsIgnoreCase(text2)){
+							res = true;
+							Clinica.getInstance().setUser(Usuarios.get(i));
+						}
+			}else if(Usuarios.get(i) instanceof Medico) {
+				if(((Medico)Usuarios.get(i)).getIdUsuario().equalsIgnoreCase(text)
+						&& ((Medico)Usuarios.get(i)).getPass().equalsIgnoreCase(text2)) {
+					res = true;
+					Clinica.getInstance().setUser(Usuarios.get(i));
+				}
+			}
+			i++;
+		}
+		return res;
+	}
 	
 }
+	
 
