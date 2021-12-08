@@ -1,26 +1,30 @@
 package logico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Clinica {
+public class Clinica implements Serializable {
 
-	private ArrayList<Paciente>Pacientes;
-	private ArrayList<Usuario>Usuarios;
-	private ArrayList<CitaMedica>citasMedicas;
-	private ArrayList<Enfermedad>Enfermedades;
-	private ArrayList<Vacuna>Vacunas;
+	private ArrayList<Paciente> Pacientes;
+	private ArrayList<Usuario> Usuarios;
+	private ArrayList<CitaMedica> citasMedicas;
+	private ArrayList<Enfermedad> Enfermedades;
+	private ArrayList<Vacuna> Vacunas;
 	public static Clinica clinica = null;
-	private int cantpacientes=0;
-	private int cantcitas=0;
-	private int cantmedicos=0;
-	private int cantvacunas=0;
-	private int cantenfermedades=0;
-	private int cantusuarios=0;
+	private int cantpacientes = 0;
+	private int cantcitas = 0;
+	private int cantmedicos = 0;
+	private int cantvacunas = 0;
+	private int cantenfermedades = 0;
+	private int cantusuarios = 0;
 
+<<<<<<< HEAD
 	private Usuario user = null;
 	
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
 	public Clinica() {
 		super();
 		this.Pacientes = new ArrayList<Paciente>();
@@ -28,11 +32,11 @@ public class Clinica {
 		this.citasMedicas = new ArrayList<CitaMedica>();
 		this.Enfermedades = new ArrayList<Enfermedad>();
 		this.Vacunas = new ArrayList<Vacuna>();
-		this.cantcitas=0;
-		this.cantmedicos=0;
-		this.cantvacunas=0;
-		this.cantenfermedades=0;
-		this.cantusuarios=0;
+		this.cantcitas = 0;
+		this.cantmedicos = 0;
+		this.cantvacunas = 0;
+		this.cantenfermedades = 0;
+		this.cantusuarios = 0;
 	}
 
 	public static Clinica getInstance() {
@@ -41,6 +45,7 @@ public class Clinica {
 		}
 		return clinica;
 	}
+<<<<<<< HEAD
 	
 	
 	public ArrayList<Paciente> getPacientes() {
@@ -82,6 +87,8 @@ public class Clinica {
 	public void setUser(Usuario user) {
 		this.user = user;
 	}
+=======
+>>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
 
 	public static void setClinica(Clinica clinica) {
 		Clinica.clinica = clinica;
@@ -91,57 +98,48 @@ public class Clinica {
 		return Pacientes;
 	}
 
-
 	public void setMisPacientes(ArrayList<Paciente> misPacientes) {
 		this.Pacientes = misPacientes;
 	}
-
 
 	public ArrayList<Usuario> getMisUsuarios() {
 		return Usuarios;
 	}
 
-
 	public void setMisUsuarios(ArrayList<Usuario> misUsuarios) {
 		this.Usuarios = misUsuarios;
 	}
-
 
 	public ArrayList<CitaMedica> getCitasMedicas() {
 		return citasMedicas;
 	}
 
-
 	public void setCitasMedicas(ArrayList<CitaMedica> citasMedicas) {
 		this.citasMedicas = citasMedicas;
 	}
-
 
 	public ArrayList<Enfermedad> getMisEnfermedades() {
 		return Enfermedades;
 	}
 
-
 	public void setMisEnfermedades(ArrayList<Enfermedad> misEnfermedades) {
 		this.Enfermedades = misEnfermedades;
 	}
-
 
 	public ArrayList<Vacuna> getMisVacunas() {
 		return Vacunas;
 	}
 
-
 	public void setMisVacunas(ArrayList<Vacuna> misVacunas) {
 		this.Vacunas = misVacunas;
 	}
-	
+
 	public Paciente BuscarPaciente(String id) {
 		boolean encontrado = false;
 		Paciente paciente = null;
-		int i =0;
-		while(i <Pacientes.size() && !encontrado) {
-			if(Pacientes.get(i).getCedula().equalsIgnoreCase(id)) {
+		int i = 0;
+		while (i < Pacientes.size() && !encontrado) {
+			if (Pacientes.get(i).getCedula().equalsIgnoreCase(id)) {
 				paciente = Pacientes.get(i);
 				encontrado = true;
 			}
@@ -149,64 +147,69 @@ public class Clinica {
 		}
 		return paciente;
 	}
-	
+
 	public CitaMedica BuscarCitaMedica(String id) {
 		boolean encontrado = false;
 		CitaMedica citamedica = null;
-		int i =0;
-		while(i<citasMedicas.size() && !encontrado) {
-			if(citasMedicas.get(i).getCodCita().equalsIgnoreCase(id)) {
+		int i = 0;
+		while (i < citasMedicas.size() && !encontrado) {
+			if (citasMedicas.get(i).getCodCita().equalsIgnoreCase(id)) {
 				citamedica = citasMedicas.get(i);
-				encontrado =true;
-;			}
+				encontrado = true;
+				;
+			}
 			i++;
 		}
 		return citamedica;
 	}
-	
+
 	public Enfermedad BuscarEnfermedad(String id) {
 		boolean encontrado = false;
 		Enfermedad enfermedad = null;
 		int i = 0;
-		while(i<Enfermedades.size() && !encontrado) {
-			if(Enfermedades.get(i).getCodEnfermedad().equalsIgnoreCase(id)) {
+		while (i < Enfermedades.size() && !encontrado) {
+			if (Enfermedades.get(i).getCodEnfermedad().equalsIgnoreCase(id)) {
 				enfermedad = Enfermedades.get(i);
-				encontrado =true;
+				encontrado = true;
 			}
 			i++;
 		}
 		return enfermedad;
 	}
-	
+
 	public Usuario BuscarUsuario(String id) {
 		boolean encontrado = false;
 		Usuario usuario = null;
 		int i = 0;
+<<<<<<< HEAD
 		while(i<Usuarios.size() && !encontrado) {
 			if(Usuarios.get(i).getIdUsuario().equalsIgnoreCase(id)){
+=======
+		while (i < Usuarios.size() && !encontrado) {
+			if (Usuarios.get(i).getCodUsuario().equalsIgnoreCase(id)) {
+>>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
 				usuario = Usuarios.get(i);
-				encontrado =true;
+				encontrado = true;
 			}
 			i++;
 		}
 		return usuario;
 	}
-	
-	
+
 	public Vacuna BuscarVacuna(String id) {
 		boolean encontrado = false;
 		Vacuna vacuna = null;
 		int i = 0;
-		while(i<Vacunas.size() && !encontrado) {
-			if(Vacunas.get(i).getCodVacunacion().equalsIgnoreCase(id)){
+		while (i < Vacunas.size() && !encontrado) {
+			if (Vacunas.get(i).getCodVacunacion().equalsIgnoreCase(id)) {
 				vacuna = Vacunas.get(i);
-				encontrado =true;
+				encontrado = true;
 			}
 			i++;
 		}
 		return vacuna;
 	}
-	
+
 	public boolean insertarPaciente(Paciente paciente) {
 		boolean hecho = false;
 		if (paciente != null) {
@@ -219,8 +222,7 @@ public class Clinica {
 		System.out.println(hecho);
 		return hecho;
 	}
-	
-	
+
 	public boolean insertarCitaMedica(CitaMedica citamedica) {
 		boolean hecho = false;
 		if (citamedica != null) {
@@ -233,7 +235,7 @@ public class Clinica {
 		System.out.println(hecho);
 		return hecho;
 	}
-	
+
 	public boolean insertarEnfermedad(Enfermedad enfermedad) {
 		boolean hecho = false;
 		if (enfermedad != null) {
@@ -246,7 +248,7 @@ public class Clinica {
 		System.out.println(hecho);
 		return hecho;
 	}
-	
+
 	public boolean insertarUsuario(Usuario usuario) {
 		boolean hecho = false;
 		if (usuario != null) {
@@ -259,7 +261,7 @@ public class Clinica {
 		System.out.println(hecho);
 		return hecho;
 	}
-	
+
 	public boolean insertarVacuna(Vacuna vacuna) {
 		boolean hecho = false;
 		if (vacuna != null) {
@@ -272,7 +274,7 @@ public class Clinica {
 		System.out.println(hecho);
 		return hecho;
 	}
-	
+
 	public boolean deletePaciente(Paciente paciente) {
 		System.out.println("eliminar paciente");
 		if (paciente != null) {
@@ -285,8 +287,6 @@ public class Clinica {
 
 	}
 
-	
-	
 	public boolean deleteCitaMedica(CitaMedica citamedica) {
 		System.out.println("eliminar cita medica");
 		if (citamedica != null) {
@@ -298,7 +298,7 @@ public class Clinica {
 		return true;
 
 	}
-	
+
 	public boolean deleteUsuario(Usuario usuario) {
 		System.out.println("eliminar usuario");
 		if (usuario != null) {
@@ -310,7 +310,7 @@ public class Clinica {
 		return true;
 
 	}
-	
+
 	public boolean deleteVacuna(Vacuna vacuna) {
 		System.out.println("eliminar vacuna");
 		if (vacuna != null) {
@@ -370,6 +370,7 @@ public class Clinica {
 	public void setCantusuarios(int cantusuarios) {
 		this.cantusuarios = cantusuarios;
 	}
+<<<<<<< HEAD
 
 	public boolean IniciarSesion(String text, String text2) {
 		boolean res = false;
@@ -395,4 +396,7 @@ public class Clinica {
 	
 }
 	
+=======
+>>>>>>> branch 'master' of https://github.com/brianamartinez03/ProyectoFinall.git
 
+}

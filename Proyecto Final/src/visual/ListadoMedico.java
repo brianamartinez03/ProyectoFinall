@@ -9,11 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-
 import logico.Clinica;
-import logico.Paciente;
 import logico.Medico;
-
+import logico.Usuario;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -33,15 +31,15 @@ public class ListadoMedico extends JDialog {
 	public static DefaultTableModel modelo;
 	public static Object[] fila;
 	private JButton btnOK;
-	
-	Paciente paciente = null;
+
+	Medico medico = null;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			ListadoPacientes dialog = new ListadoPacientes();
+			ListadoMedico dialog = new ListadoMedico();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -53,7 +51,8 @@ public class ListadoMedico extends JDialog {
 	 * Create the dialog.
 	 */
 	public ListadoMedico() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\git\\ProyectoFinall\\Proyecto Final\\2695.png"));
+		setIconImage(
+				Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\git\\ProyectoFinall\\Proyecto Final\\2695.png"));
 		setTitle("Listado de Medicos");
 		setBounds(100, 100, 779, 465);
 		setLocationRelativeTo(null);
@@ -74,16 +73,16 @@ public class ListadoMedico extends JDialog {
 				scrollPane.setBounds(0, 0, 763, 352);
 				panel.add(scrollPane);
 				{
-					
+
 					modelo = new DefaultTableModel();
-					String[] columns = {"Cedula","Nombre","Genero", "Fecha de nacimiento","Direccion","Telefono"}; 
+					String[] columns = { "Codigo", "Nombre", "Especialidad", "Telefono" };
 					modelo.setColumnIdentifiers(columns);
 					table = new JTable();
 					table.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 					table.addMouseListener(new MouseAdapter() {
 						@Override
 						public void mouseClicked(MouseEvent e) {
-							
+
 						}
 					});
 					table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -92,7 +91,7 @@ public class ListadoMedico extends JDialog {
 				}
 			}
 		}
-		
+
 		JPanel panel1 = new JPanel();
 		panel1.setBackground(new Color(224, 255, 255));
 		panel1.setToolTipText("");
@@ -109,7 +108,7 @@ public class ListadoMedico extends JDialog {
 				btnOK.setActionCommand("OK");
 				buttonPane.add(btnOK);
 				getRootPane().setDefaultButton(btnOK);
-				btnOK.setEnabled(false);
+				btnOK.setEnabled(true);
 			}
 			{
 				JButton cancelButton = new JButton("Cancelar");
@@ -124,21 +123,19 @@ public class ListadoMedico extends JDialog {
 		}
 		CargarTabla();
 	}
-
 	private void CargarTabla() {
 		modelo.setRowCount(0);
 		fila = new Object[modelo.getColumnCount()];
-		for(Paciente p : Clinica.getInstance().getMisPacientes()){
-			
-			Paciente c = (paciente);	
-			fila[0]=c.getCedula();
-			fila[1]=c.getNombre();
-			fila[2]=c.getGenero();
-			fila[3]=c.getDiaNacimiento();
-			fila[4]=c.getDireccion();
-			fila[5]=c.getTelefono();
-			modelo.addRow(fila);
-		
-
-}}	
+		for (Usuario aux : Clinica.getInstance().getMisUsuarios()) {
+			if (aux instanceof Medico) {
+				fila[0] = ((Medico) aux).getCodMedico();
+				fila[1] = aux.getNombre();
+				fila[2] = ((Medico) aux).getEspecialidad();
+				fila[3] = aux.getTelefono();
+				modelo.addRow(fila);
+			}
+		}
+	}
 }
+
+

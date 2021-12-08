@@ -140,6 +140,8 @@ public class Principal extends JFrame {
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Registro m\u00E9dico");
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				RegistroUsuario m = new RegistroUsuario();
+				m.setVisible(true);
 			}
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
@@ -157,6 +159,12 @@ public class Principal extends JFrame {
 		menuBar.add(mnNewMenu_2);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Listado de medicos");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListadoMedico m =new ListadoMedico();
+				m.setVisible(true);
+			}
+		});
 		mnNewMenu_2.add(mntmNewMenuItem_2);
 		
 		JMenu mnNewMenu_3 = new JMenu("Paciente");
