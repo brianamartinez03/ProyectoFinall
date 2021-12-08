@@ -48,6 +48,7 @@ public class RegistroUsuario extends JDialog {
 	private JTextField txtContrasenna_Vendedor;
 	private JLabel lblContrasenna_vendedor;
 	private JLabel lblUsuario_vendedor;
+	private JTextField txtPuestoLaboral;
 
 	/**
 	 * Launch the application.
@@ -126,7 +127,7 @@ public class RegistroUsuario extends JDialog {
 					}
 				}
 			});
-			txtCedula.setForeground(new Color(0, 0, 255));
+			txtCedula.setForeground(new Color(0, 0, 0));
 			txtCedula.setBackground(Color.WHITE);
 			txtCedula.setBounds(107, 32, 126, 20);
 			panel_1.add(txtCedula);
@@ -134,13 +135,13 @@ public class RegistroUsuario extends JDialog {
 			
 			txtNombre = new JTextField();
 			txtNombre.setBackground(Color.WHITE);
-			txtNombre.setForeground(new Color(0, 0, 255));
+			txtNombre.setForeground(new Color(0, 0, 0));
 			txtNombre.setColumns(10);
 			txtNombre.setBounds(107, 81, 126, 20);
 			panel_1.add(txtNombre);
 			
 			txtDireccion = new JTextField();
-			txtDireccion.setForeground(new Color(0, 0, 255));
+			txtDireccion.setForeground(new Color(0, 0, 0));
 			txtDireccion.setBackground(Color.WHITE);
 			txtDireccion.setColumns(10);
 			txtDireccion.setBounds(455, 32, 126, 20);
@@ -157,10 +158,20 @@ public class RegistroUsuario extends JDialog {
 				}
 			});
 			txtTelefono.setBackground(Color.WHITE);
-			txtTelefono.setForeground(new Color(0, 0, 255));
+			txtTelefono.setForeground(new Color(0, 0, 0));
 			txtTelefono.setColumns(10);
 			txtTelefono.setBounds(455, 81, 126, 20);
 			panel_1.add(txtTelefono);
+			
+			JLabel lblPuestoLaboral = new JLabel("Puesto Laboral");
+			lblPuestoLaboral.setBounds(338, 35, 107, 14);
+			panel_1.add(lblPuestoLaboral);
+			lblPuestoLaboral.setVisible(false);
+			
+			txtPuestoLaboral = new JTextField();
+			txtPuestoLaboral.setBounds(455, 32, 126, 20);
+			panel_1.add(txtPuestoLaboral);
+			txtPuestoLaboral.setColumns(10);
 			
 			JPanel panel_2 = new JPanel();
 			panel_2.setForeground(Color.BLACK);
@@ -188,12 +199,17 @@ public class RegistroUsuario extends JDialog {
 
 					txtContrasenna_admin.setVisible(false);
 					txtUsuario_admin.setVisible(false);
+					txtPuestoLaboral.setVisible(false);
+					lblPuestoLaboral.setVisible(false);
+					
 					
 					
 					lblUsuario_vendedor.setVisible(true);
 					txtUsuario_vendedor.setVisible(true);
 					lblContrasenna_vendedor.setVisible(true);
 					txtContrasenna_Vendedor.setVisible(true);
+					txtDireccion.setVisible(true);
+					lblDireccin.setVisible(true);
 					
 				}
 			});
@@ -214,9 +230,14 @@ public class RegistroUsuario extends JDialog {
 					
 					lblContrasena_admin.setVisible(true);
 					lblCorreo_admin.setVisible(true);
+					txtDireccion.setVisible(false);
+					lblDireccin.setVisible(false);
+
 
 					txtContrasenna_admin.setVisible(true);
 					txtUsuario_admin.setVisible(true);
+					txtPuestoLaboral.setVisible(true);
+					lblPuestoLaboral.setVisible(true);
 					
 					
 					lblUsuario_vendedor.setVisible(false);
@@ -240,6 +261,7 @@ public class RegistroUsuario extends JDialog {
 			lblCorreo_admin = new JLabel("Usuario:");
 			lblCorreo_admin.setBackground(new Color(224, 255, 255));
 			lblCorreo_admin.setForeground(new Color(0, 0, 0));
+			lblCorreo_admin.setVisible(true);
 			
 			lblCorreo_admin.setBounds(10, 45, 93, 14);
 			lblCorreo_admin.setVisible(false);
@@ -249,19 +271,19 @@ public class RegistroUsuario extends JDialog {
 			lblContrasena_admin.setForeground(new Color(0, 0, 0));
 			lblContrasena_admin.setBackground(new Color(224, 255, 255));
 			lblContrasena_admin.setBounds(351, 45, 119, 14);
-			lblContrasena_admin.setVisible(false);
+			lblContrasena_admin.setVisible(true);
 			panel_Administrativo.add(lblContrasena_admin);
 			
 			txtUsuario_admin = new JTextField();
-			txtUsuario_admin.setForeground(new Color(0, 0, 255));
+			txtUsuario_admin.setForeground(new Color(0, 0, 0));
 			txtUsuario_admin.setBackground(new Color(255, 255, 255));
 			txtUsuario_admin.setBounds(113, 40, 93, 20);
-			txtUsuario_admin.setVisible(false);
+			txtUsuario_admin.setVisible(true);
 			panel_Administrativo.add(txtUsuario_admin);
 			txtUsuario_admin.setColumns(10);
 			
 			txtContrasenna_admin = new JTextField();
-			txtContrasenna_admin.setForeground(new Color(0, 0, 255));
+			txtContrasenna_admin.setForeground(new Color(0, 0, 0));
 			txtContrasenna_admin.setBackground(new Color(255, 255, 255));
 			txtContrasenna_admin.setColumns(10);
 			txtContrasenna_admin.setBounds(467, 42, 93, 20);
@@ -277,6 +299,7 @@ public class RegistroUsuario extends JDialog {
 					panel_Medico.setLayout(null);
 					
 					lblUsuario_vendedor = new JLabel("Usuario:");
+					lblUsuario_vendedor.setVisible(true);
 					
 					lblUsuario_vendedor.setForeground(Color.BLACK);
 					lblUsuario_vendedor.setBackground(Color.BLACK);
@@ -284,14 +307,14 @@ public class RegistroUsuario extends JDialog {
 					panel_Medico.add(lblUsuario_vendedor);
 					
 					txtUsuario_vendedor = new JTextField();
-					txtUsuario_vendedor.setForeground(new Color(0, 0, 255));
+					txtUsuario_vendedor.setForeground(new Color(0, 0, 0));
 					txtUsuario_vendedor.setBackground(Color.WHITE);
 					txtUsuario_vendedor.setBounds(113, 40, 93, 20);
 					panel_Medico.add(txtUsuario_vendedor);
 					txtUsuario_vendedor.setColumns(10);
 					
 					txtContrasenna_Vendedor = new JTextField();
-					txtContrasenna_Vendedor.setForeground(new Color(0, 0, 255));
+					txtContrasenna_Vendedor.setForeground(new Color(0, 0, 0));
 					txtContrasenna_Vendedor.setBackground(Color.WHITE);
 					txtContrasenna_Vendedor.setColumns(10);
 					txtContrasenna_Vendedor.setBounds(444, 40, 93, 20);
@@ -313,7 +336,7 @@ public class RegistroUsuario extends JDialog {
 			{
 				JButton okButton = new JButton("Registrar");
 				
-				okButton.setForeground(new Color(0, 255, 0));
+				okButton.setForeground(new Color(0, 0, 0));
 				okButton.setBackground(UIManager.getColor("Button.focus"));
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -327,7 +350,8 @@ public class RegistroUsuario extends JDialog {
 							JOptionPane.showMessageDialog(null, "Ha dejado espacios vacios en información General!!\nFAVOR DE LLENARLOS CORRECTAMENTE.", "ERROR", JOptionPane.ERROR_MESSAGE);
 						}else {
 						if(rdbMedico.isSelected()) {
-
+							String usuario = txtUsuario_vendedor.getText();
+							String contrasena = txtContrasenna_Vendedor.getText();
 						}
 						
 						if(rdbAdministrativo.isSelected()) {
@@ -349,7 +373,7 @@ public class RegistroUsuario extends JDialog {
 			{
 				JButton cancelButton = new JButton("Cancelar");
 				
-				cancelButton.setForeground(new Color(255, 0, 0));
+				cancelButton.setForeground(new Color(0, 0, 0));
 				cancelButton.setBackground(UIManager.getColor("Button.focus"));
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -372,6 +396,5 @@ public class RegistroUsuario extends JDialog {
 		
 		txtContrasenna_Vendedor.setText("");
 		txtUsuario_vendedor.setText("");
-		
 	}
 }

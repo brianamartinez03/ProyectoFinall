@@ -1,8 +1,9 @@
 package logico;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Consulta {
+public class Consulta implements Serializable{
 
 	private String codConsulta;
 	private Date fechaConsulta;

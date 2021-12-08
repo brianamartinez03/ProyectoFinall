@@ -9,10 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-
 import logico.Clinica;
 import logico.Paciente;
-
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -22,6 +20,8 @@ import java.awt.event.MouseEvent;
 import javax.swing.border.TitledBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class ListadoPacientes extends JDialog {
 
@@ -30,7 +30,7 @@ public class ListadoPacientes extends JDialog {
 	public static DefaultTableModel modelo;
 	public static Object[] fila;
 	private JButton btnOK;
-	
+
 	Paciente paciente = null;
 
 	/**
@@ -50,6 +50,8 @@ public class ListadoPacientes extends JDialog {
 	 * Create the dialog.
 	 */
 	public ListadoPacientes() {
+		setIconImage(
+				Toolkit.getDefaultToolkit().getImage("C:\\Users\\HP\\git\\ProyectoFinall\\Proyecto Final\\2695.png"));
 		setTitle("Listado de pacientes");
 		setBounds(100, 100, 779, 465);
 		setLocationRelativeTo(null);
@@ -68,16 +70,16 @@ public class ListadoPacientes extends JDialog {
 				scrollPane.setBounds(0, 0, 763, 352);
 				panel.add(scrollPane);
 				{
-					
+
 					modelo = new DefaultTableModel();
-					String[] columns = {"Cedula","Nombre","Genero", "Fecha de nacimiento","Direccion","Telefono"}; 
+					String[] columns = { "Cedula", "Nombre", "Genero", "Fecha de nacimiento", "Direccion", "Telefono" };
 					modelo.setColumnIdentifiers(columns);
 					table = new JTable();
 					table.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 					table.addMouseListener(new MouseAdapter() {
 						@Override
 						public void mouseClicked(MouseEvent e) {
-							
+
 						}
 					});
 					table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -86,13 +88,15 @@ public class ListadoPacientes extends JDialog {
 				}
 			}
 		}
-		
+
 		JPanel panel1 = new JPanel();
+		panel1.setBackground(new Color(224, 255, 255));
 		panel1.setToolTipText("");
 		panel1.setBounds(0, 0, 763, 41);
 		contentPanel.add(panel1);
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBackground(new Color(224, 255, 255));
 			buttonPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
@@ -116,20 +120,17 @@ public class ListadoPacientes extends JDialog {
 		}
 		CargarTabla();
 	}
-
 	private void CargarTabla() {
 		modelo.setRowCount(0);
 		fila = new Object[modelo.getColumnCount()];
-		for(Paciente p : Clinica.getInstance().getMisPacientes()){
-			
-			fila[0]=p.getCedula();
-			fila[1]=p.getNombre();
-			fila[2]=p.getGenero();
-			fila[3]=p.getDiaNacimiento();
-			fila[4]=p.getDireccion();
-			fila[5]=p.getTelefono();
+		for (Paciente p : Clinica.getInstance().getMisPacientes()) {
+			fila[0] = p.getCedula();
+			fila[1] = p.getNombre();
+			fila[2] = p.getGenero();
+			fila[3] = p.getDiaNacimiento();
+			fila[4] = p.getDireccion();
+			fila[5] = p.getTelefono();
 			modelo.addRow(fila);
-		
-
-}}	
+		}
+	}
 }
